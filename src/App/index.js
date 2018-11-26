@@ -25,6 +25,9 @@ const Card = props => {
                 case 10004:
                     props.showModalMsg('今天的票数已经投完了哦！')
                     break
+                case 10005:
+                    props.showModalMsg('只有本校的同学才能投票哦！')
+                    break
                 default:
                     props.showModalMsg('身份验证失败！请重新进入本网站。')
             }
@@ -71,6 +74,9 @@ const Popup = props => {
                     break
                 case 10004:
                     props.showModalMsg('今天的票数已经投完了哦！')
+                    break
+                case 10005:
+                    props.showModalMsg('只有本校的同学才能投票哦！')
                     break
                 default:
                     props.showModalMsg('身份验证失败！请重新进入本网站。')

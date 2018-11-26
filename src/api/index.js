@@ -1,9 +1,14 @@
 import axios from 'axios'
 
+// const getUrlParam = param => {
+//     const query = new URLSearchParams(window.location.search)
+//     return query.get(param)
+// }
 
 const getUrlParam = param => {
-    const query = new URLSearchParams(window.location.search)
-    return query.get(param)
+    var reg = new RegExp("(^|&)" + param + "=([^&]*)(&|$)")
+    var r = window.location.search.substr(1).match(reg)
+    if (r != null) return unescape(r[2]); return null
 }
 
 const onVote = id => {
