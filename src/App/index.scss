@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: 'tt';
-    src: url('./tt.ttf');
+    src: url('https://hongyan.cqupt.edu.cn/fonts/HYTiaoTiaoTiJ.ttf');
 }
 
 body {
@@ -132,7 +132,7 @@ main {
             overflow-y: scroll;
 
             .p4 {
-                font-family: tt;
+                font-family: tt, serif;
                 font-size: 5.4vw;
                 font-weight: 600;
                 color: #0558bf;
@@ -171,7 +171,7 @@ main {
     position: fixed;
     width: 100%;
     height: 100%;
-    z-index: 6;
+    z-index: 7;
     top: 0;
     left: 0;
     display: flex;
@@ -191,6 +191,7 @@ main {
         align-items: center;
         position: relative;
         padding-bottom: 3vw;
+        z-index: 8;
 
         p {
             color: #2373d7;
@@ -219,7 +220,7 @@ main {
 }
 
 .fade-enter {
-    opacity: 0.01;
+    opacity: 0;
 }
 
 .fade-enter-active {
@@ -244,7 +245,7 @@ main {
 .bounce-enter-active {
     transform: scale(1);
     opacity: 1;
-    transition: all .5s ease;
+    transition: all .3s ease;
 }
 
 .bounce-leave {

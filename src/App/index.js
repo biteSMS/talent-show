@@ -26,7 +26,7 @@ const Card = props => {
                     props.showModalMsg('今天的票数已经投完了哦！')
                     break
                 case 10005:
-                    props.showModalMsg('只有本校的同学才能投票哦！')
+                    props.showModalMsg('只有绑定重邮小帮手同学才能投票哦！')
                     break
                 default:
                     props.showModalMsg('身份验证失败！请重新进入本网站。')
@@ -76,7 +76,7 @@ const Popup = props => {
                     props.showModalMsg('今天的票数已经投完了哦！')
                     break
                 case 10005:
-                    props.showModalMsg('只有本校的同学才能投票哦！')
+                    props.showModalMsg('只有绑定重邮小帮手同学才能投票哦！')
                     break
                 default:
                     props.showModalMsg('身份验证失败！请重新进入本网站。')
@@ -159,7 +159,7 @@ export default class App extends React.Component {
                 </ReactCSSTransitionGroup>
                 <ReactCSSTransitionGroup
                     transitionName="bounce"
-                    transitionEnterTimeout={500}
+                    transitionEnterTimeout={300}
                     transitionLeaveTimeout={300}
                 >
                 {this.state.isShowModal && <Modal handleModal={this.showModal} msg={this.state.msg}/>}
@@ -200,8 +200,8 @@ export default class App extends React.Component {
 
     handleClickLike = id => {
         let data = this.state.voteCount
-        if (data[id-1]) {
-            data[id-1]['vote']++
+        if (data.find(s => s.id === id)) {
+            data.find(s => s.id === id)['vote'] += 1
         }
         else {
             data.push({
